@@ -9,24 +9,26 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;"
-            renderer="antialias: true;"
-            id="scene"
-            embedded
-            gesture-detector
-        >
 
+
+
+      <a-scene embedded
+      arjs="trackingMethod: best; selectCamera: true; debugUIEnabled: false;  detectionMode: mono_and_matrix; matrixCodeType: 3x3; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;"
+      renderer="logarithmicDepthBuffer: true; antialias: true; colorManagement: true; sortObjects: true; physicallyCorrectLights: false;"
+      vr-mode-ui="enabled: false"
+      gesture-detector id="scene"
+      loading-screen="enabled: true;"
+      >
+
+    <a-assets><a-asset-item id="placa" src="pelourinho.glb" preload="auto"></a-asset-item></a-assets>
 
 
       <a-marker preset="hiro">
         <a-entity
           position="0 0 0"
-          scale="0.05 0.05 0.05"
+          scale="5 5 5"
           rotation="-90 0 0"
-          gltf-model="pelourinho.glb" animation-mixer
+          gltf-model="pelourinho.glb" animation-mixer class="clickable" gesture-handler
         ></a-entity>
             </a-marker>
 
