@@ -13,12 +13,13 @@
 
 
       <a-scene embedded
-      arjs="trackingMethod: best; selectCamera: true; debugUIEnabled: false;  detectionMode: mono_and_matrix; matrixCodeType: 3x3; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;"
+      arjs="trackingMethod: best; selectCamera: true; debugUIEnabled: false;  sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;"
       renderer="logarithmicDepthBuffer: true; antialias: true; colorManagement: true; sortObjects: true; physicallyCorrectLights: false;"
       vr-mode-ui="enabled: false"
       gesture-detector id="scene"
       loading-screen="enabled: true;"
       >
+
 
     <a-assets><a-asset-item id="placa" src="pelourinho.glb" preload="auto"></a-asset-item></a-assets>
 
@@ -31,7 +32,7 @@
         gltf-model="pelourinho.glb" animation-mixer class="clickable" gesture-handler
       ></a-entity>
      </a-marker>
-     
+
 
             <a-entity camera></a-entity>
         </a-scene>
